@@ -1,24 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+
+// import { webclient } from './server/fetch';
+import { NavigationMenu } from './component/navigationmenu';
+import { Layout } from 'antd';
+const { Header, Footer, Sider, Content } = Layout;
+// async function test() {
+//   const aaa = await webclient.get('http://39.100.197.196/api/');
+//   console.log('aaa', aaa);
+//   // const bbb = await webclient.post('');
+// }
+// void test();
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Layout>
+        <Sider>
+          <NavigationMenu />
+        </Sider>
+        <Layout>
+          <Header>Header</Header>
+          <Content>Content</Content>
+          <Footer>Footer</Footer>
+        </Layout>
+      </Layout>
     </div>
   );
 }
